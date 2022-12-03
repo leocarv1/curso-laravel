@@ -44,7 +44,7 @@ header {
 }
 
 #navbar a {
-    font-size: 14px;
+    font-size: 16px;
     color: #757575;
 }
 
@@ -122,6 +122,26 @@ header {
     font-size: 14px;
     color: #757575;
 }
+
+/* Event create page */
+#event-create-container {
+    padding: 30px;
+}
+
+#event-create-containe label {
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea {
+    font-size: 14px;
+}
+
+
+
+
+
 
 /* footer */
 footer {
