@@ -42,6 +42,11 @@ Route::get('/events/contact', [EventController::class, 'contact']);
 //Tela para eventos de um usuários logado
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
+//Participar do evento
+Route::post('events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
+//Sair do evento
+Route::delete('events/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
+
 
 
 
