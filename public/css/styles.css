@@ -161,6 +161,8 @@ header {
 
 #image-container  img {
     border-radius: 10px;
+    width: 500px;
+    height: 500px;
 }
 
 #info-container {
@@ -179,6 +181,37 @@ header {
     font-size: 20px;
     font-weight: bold;
 }
+
+#description-container {
+    margin-top: 30px;
+}
+
+
+/* Dashboard */
+
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-events-container th {
+    width: 25%;
+}
+
+.dashboard-events-container form {
+    display: inline-block;
+}
+
+/* Editando evento */
+.img-preview {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+
+
 
 #info-container ion-icon {
     font-size: 20px;

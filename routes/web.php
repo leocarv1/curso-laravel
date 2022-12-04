@@ -14,11 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\EventController;
 
+//Tela principal
 Route::get('/', [EventController::class, 'index']);
 
-Route::get('/events/create', [EventController::class, 'create']);
+//Tela para criar um evento
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
+
+//Tela mostrar detalhes de um evento
 Route::get('/events/{id}', [EventController::class, 'show']);
+
+//
 Route::post('/events', [EventController::class, 'store']);
+
+//Excluir um evento
+Route::delete('/events/{id}', [EventController::class, 'destroy'])->middleware('auth');
+
+//Atualizar um evento
+Route::get('/events/edit/{id}', [EventController::class, 'edit'])->middleware('auth');
+Route::put('/events/update/{id}', [EventController::class, 'update'])->middleware('auth');
 
 
 
@@ -26,14 +39,10 @@ Route::post('/events', [EventController::class, 'store']);
 Route::get('/events/contact', [EventController::class, 'contact']);
 
 
+//Tela para eventos de um usuários logado
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
+
+
